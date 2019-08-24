@@ -15,3 +15,9 @@ run_script.sh:
   publisher: "Cache Project"
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
+
+404.md:
+  publisher: "Cache Project"
+  license: "CC0-1.0"
+  copyright: "2019 Cache Project"
+  language: "en-US"
