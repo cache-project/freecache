@@ -1,7 +1,7 @@
 import os
 import shutil
 
-def transform(meta_dict, input_file, output_file):
+def transform(meta_dict, input_file, output_file, args):
   if os.path.isfile(input_file):
     shutil.copy2(input_file, output_file)
   else:

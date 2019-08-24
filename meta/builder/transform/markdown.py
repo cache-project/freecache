@@ -4,7 +4,7 @@ import mistletoe
 header = '<link rel="stylesheet" href="/freecache/runtime/style.css" />'
 
 
-def transform(meta_dict, input_file, output_file):
+def transform(meta_dict, input_file, output_file, args):
   output_file_html = output_file.replace('.md', '.html')
 
   with open(output_file_html, 'w') as o_f:

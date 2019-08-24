@@ -1,3 +1,5 @@
 pyyaml
 gitpython
 mistletoe
+requests
+tqdm

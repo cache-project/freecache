@@ -13,7 +13,7 @@ def get_transform_path():
 
 
 def get_builder_path():
-  return os.path.join(_get_module_path(), 'builders')
+  return os.path.join(_get_module_path(), 'build')
 
 
 _transformers = None

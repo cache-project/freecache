@@ -1,5 +1,8 @@
 language: python
-cache: pip
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - cache
 python:
 - '3.7'
 addons:
@@ -9,7 +12,8 @@ addons:
 install:
 - pip install -r meta/builder/requirements.txt
 script:
-- ./run_script.sh meta.builder.build .
+- ./run_script.sh meta.builder.builder --force-hash .
+- du -hc out | tail -n 1
 deploy:
   provider: pages
   local_dir: out

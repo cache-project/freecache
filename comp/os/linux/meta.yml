@@ -1,0 +1,23 @@
+linux-5.2.9:
+  publisher: "The Linux Kernel Organization"
+  license: "GPL-2.0-only"
+  build: "download-archive"
+  url: "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.9.tar.xz"
+  hash: "c6896219fbd1a13dd5106e6310d25f6b00b811206238e021eb4ea61cd38dcafe"
+  title: "Linux Kernel, version 5.2.9"
+
+linux-5.2.9.tar.xz:
+  publisher: "The Linux Kernel Organization"
+  license: "GPL-2.0-only"
+  build: "download"
+  url: "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.9.tar.xz"
+  hash: "c6896219fbd1a13dd5106e6310d25f6b00b811206238e021eb4ea61cd38dcafe"
+  title: "Linux Kernel, version 5.2.9 (archive)"
+
+linux-5.2.9.tar.sign:
+  publisher: "The Linux Kernel Organization"
+  license: "GPL-2.0-only"
+  build: "download"
+  url: "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.9.tar.sign"
+  hash: "c40147e3fa027fa81dd0449aba6444da68d128b267fb31f85633ee35489ec272"
+  title: "Signature for Linux Kernel, version 5.2.9 (archive)"
