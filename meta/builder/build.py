@@ -36,7 +36,7 @@ def build(directory, out_directory):
     if file_meta['license'] not in licenses:
       raise Exception('{} has invalid license ({})'.format(file_path, file_meta['license']))
     if 'transform' not in file_meta:
-      file_meta['transform'] = 'link'
+      file_meta['transform'] = 'copy'
     transformers = meta.builder.modules.get_transformers()
     transform_name = file_meta['transform']
     transformer = transformers[transform_name]
