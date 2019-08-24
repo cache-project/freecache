@@ -3,14 +3,16 @@ free.md:
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
   language: "en-US"
+  transform: "markdown"
 
 format.md:
   publisher: "Cache Project"
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
   language: "en-US"
+  transform: "markdown"
 
-validator:
+builder:
   publisher: "Cache Project"
   license: "CC0-1.0"
   copyright: "2019 Cache Project"

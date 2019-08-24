@@ -23,3 +23,8 @@ file, with each containing that file's metadata.
 Project)
 
 `language`: A BCP 47 language code for the primary language of the work
+
+`transform`: The transform module used to transform the input file into an
+output file
+
+`builder`: The builder module used to generate the output file
