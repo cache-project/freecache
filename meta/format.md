@@ -6,9 +6,9 @@ hierarchy is currently being designed.
 There is a difference between a physical directory and a hierarchical
 directory. A physical directory is a directory on your file system. A
 hierarchical directory is a directory that (1) hasn't been referenced by a
-`meta.toml` and (2) contains a `meta.toml`.
+`meta.yml` and (2) contains a `meta.yml`.
 
-Every hierarchical directory has a TOML file named `meta.toml`. This file
+Every hierarchical directory has a YAML file named `meta.yml`. This file
 contains metadata for every entry in that directory. It has a section for each
 file, with each containing that file's metadata.
 
