@@ -13,12 +13,9 @@ deploy:
   provider: pages
   local_dir: out
   github_token: $GITHUB_TOKEN
-  keep_history: true
   skip_cleanup: true
   on:
     branch: master
-  edge:
-    branch: v1.8.47
 env:
   global:
     secure: ZSOOaUwGKIKOHmCwtK93B7beNT6nNzyhV2WXGt3+JdgREGynGY6igfRpwLKxU4u7N0eNySXSF/o0lJ4oOx2zOqKGFV1FqaCUzIaDaXhkPg8kRR/6Pu7UeoPKNStKg8GAUpvvjtGLOeMfs+aVKWPx05VUDScfzC/3/HmtwqQPws8xR8fC2B53Nl4+QZ24t0l58uwoDMi6Qtlm6LmZ/8UzU81/9pQGLLZVSKVPRuNnRRxP9F+cx3joesb1788ATDd0PtuQNsPVM/mymW3DvCZ2MdEF42v2OMHDhSVMF8BNa6H5V0AZEkds7k9kCCoPr71k1y3x7LnFlE4dvCovvXCSj5h8nbCPvKvhxq+yveL+JxvkNSELtCiaGQSYKa2G9GXNPtIFfF7Ntn0n3+3eGJBvbtIiTwRuy9wh6m1s9bhuVxPibw4zRVdYmL8wQdzvoI5dslwPf60Nj+ooBrNWgt65anutpXm78BVYwRFM/3+wkrs98uBPa0xgwxnbUvXPJn9wwu2QbyiDTKkc03S+mTRS/ANixTcO9X22DJDzR7LxUepITubH5K9Inu3mfgcbmvIe+/qo1colWL2+cZEgjDpM67d0zkClQx7bGjDYKXqAtbE344W3K4iKLRJ54i8nqnovt0EvpdIWxjzMAcg9mcwLrlVgHJdHLEcQ6rDilWLF0Ag=
