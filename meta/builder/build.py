@@ -60,5 +60,8 @@ if __name__ == "__main__":
   parser.add_argument('input_dir', type=str, help='The input directory', default=os.getcwd())
   parser.add_argument('-o', '--output', type=str, help='The output directory' , default=os.path.join(os.getcwd(), 'out'))
   args = parser.parse_args()
-  shutil.rmtree(args.output)
+  if os.path.isdir(args.output):
+    shutil.rmtree(args.output)
+  elif os.path.isfile(args.output):
+    os.unlink(args.output)
   build(args.input_dir, args.output)
