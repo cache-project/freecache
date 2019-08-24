@@ -60,8 +60,8 @@ def build(directory, out_directory):
           if 'title' in file_meta:
             title = '{} <em>(<code>{}</code>)</em>'.format(file_meta['title'], file)
           else:
-            title = file
-          index.write('<li><a href="{}"><code>{}</code></a></li>'.format(filename_map[file], title))
+            title = '<code>{}</code>'.format(file)
+          index.write('<li><a href="{}">{}</a></li>'.format(filename_map[file], title))
       index.write('</ul>')
   for child in children:
     if child != 'meta.yml' and child not in meta_dict and child not in ignore:
