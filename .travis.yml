@@ -1,8 +1,8 @@
 language: python
 cache:
   directories:
-    - $HOME/.cache/pip
-    - cache
+  - "$HOME/.cache/pip"
+  - cache
 python:
 - '3.7'
 addons:
@@ -12,14 +12,19 @@ addons:
 install:
 - pip install -r meta/builder/requirements.txt
 script:
-- ./run_script.sh meta.builder.builder --force-hash .
+- "./run_script.sh meta.builder.builder --force-hash ."
 - du -hc out | tail -n 1
 deploy:
-  provider: pages
-  local_dir: out
-  github_token: $GITHUB_TOKEN
+  provider: gcs
+  access_key_id: GOOGFIVFX55JAKUUL6L7472G
+  secret_access_key:
+    secure: YvTqlf3F+LAI+6Ab5xLWzejuFzI+eqF1lPLnoG1fzq01Qp0OCrdPTM82G7T89h266bINpgPt96nPdG2w7coZQaVM+9m3buRaH8OSq9GyUTfTb8MABVxzCPNGVjSmR1+ZJL6BxuY6tAM0U9lNIa91NJobDISn9MoXggJh+MCRcVLqEuAuBI8074n8snvJw63zzm82ZQTcIXtaj7HpKwFU7YasQmpU7On89FB6YvtzF/MdYhBfQajBIpvTaTL9ytBs9o35yxfb7l4smpL4w3o8ibLhrZfm7VioEXIrtB6f+zgW/EmcTUKPqmcF0tyRuWR+8KFw2EQ8hrLA36ufFfyjyWegf741vjyeGPe/ZIYYEdLbU5Vv3/+IKNuK0tP+uzQWYT/N36LvRHkkWlgckAFxAg7K5p9rg/uKIq9m0rk3afOHpJD7wrvUXbQvh60iS1YEHfnDK6m9FgeQ3phvnfTz/t1nqNMuylnGqqQhl4753PLrtLY+AzSP/6MrTCRKJ1Ljxq8DyaY1aO1R5iLzFtXtpTcie8s4B6+/XR0l6MsYU9Kb0pTO1u0Tj8egAiNVm5O+rdpKSlCnRGzVUwzZPmR7vlqU0dl+T5jHiU9kfld1ILsrKFqf1mCmt5Ake+83HlrFx4f0KofvpPqOq9/5v1NrhrIuWAsu0ebaTE2WzG9Xz3E=
+  bucket: freecache
   skip_cleanup: true
+  detect_encoding: true
+  local-dir: out
   on:
+    repo: cache-project/freecache
     branch: master
 env:
   global:
