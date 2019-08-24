@@ -5,16 +5,19 @@ licenses:
   publisher: "Cache Project"
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
+  index: false
 
 .gitignore:
   publisher: "Cache Project"
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
+  index: false
 
 run_script.sh:
   publisher: "Cache Project"
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
+  index: false
 
 404.md:
   publisher: "Cache Project"
@@ -22,3 +25,10 @@ run_script.sh:
   copyright: "2019 Cache Project"
   language: "en-US"
   transform: "markdown"
+  title: "404 page"
+  index: false
+
+source.tar.gz:
+  publisher: "Cache Project"
+  copyright: "2019 Cache Project"
+  title: "The source repository for FreeCache"

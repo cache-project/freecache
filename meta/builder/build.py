@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 import os
+import gzip
 import argparse
 import pathlib
 import yaml
 import shutil
+from git import Repo
 
 import meta.builder.licenses
 import meta.builder.modules
@@ -32,10 +34,11 @@ def build(directory, out_directory):
     if not os.path.exists(file_path):
       raise Exception('{} doesn\'t exist'.format(file_path))
     file_meta = meta_dict[file]
-    if 'license' not in file_meta:
-      raise Exception('{} missing a license'.format(file_path))
-    if file_meta['license'] not in licenses:
-      raise Exception('{} has invalid license ({})'.format(file_path, file_meta['license']))
+    if file != 'source.tar.gz':
+      if 'license' not in file_meta:
+        raise Exception('{} missing a license'.format(file_path))
+      if file_meta['license'] not in licenses:
+        raise Exception('{} has invalid license ({})'.format(file_path, file_meta['license']))
     if 'transform' not in file_meta:
       file_meta['transform'] = 'copy'
     transformers = meta.builder.modules.get_transformers()
@@ -50,9 +53,15 @@ def build(directory, out_directory):
     with open(os.path.join(out_directory, 'index.html'), 'w') as index:
       index.write('<ul>')
       for child in children:
-        index.write('<li><a href="{}"><strong><code>{}</code></strong></a></li>'.format(child, child))
+        index.write('<li><a href="{}"><strong><code>{}/</code></strong></a></li>'.format(child, child))
       for file in meta_dict:
-        index.write('<li><a href="{}"><code>{}</code></a></li>'.format(filename_map[file], file))
+        file_meta = meta_dict[file]
+        if 'index' not in file_meta or file_meta['index']:
+          if 'title' in file_meta:
+            title = '{} <em>(<code>{}</code>)</em>'.format(file_meta['title'], file)
+          else:
+            title = file
+          index.write('<li><a href="{}"><code>{}</code></a></li>'.format(filename_map[file], title))
       index.write('</ul>')
   for child in children:
     if child != 'meta.yml' and child not in meta_dict and child not in ignore:
@@ -73,4 +82,9 @@ if __name__ == "__main__":
     shutil.rmtree(args.output)
   elif os.path.isfile(args.output):
     os.unlink(args.output)
+  repo = Repo(args.input_dir)
+  archive_path = os.path.join(args.input_dir, 'source.tar.gz')
+  with gzip.open(archive_path, 'wb') as archive_file:
+    repo.archive(archive_file)
   build(args.input_dir, args.output)
+  os.unlink(archive_path)
