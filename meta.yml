@@ -21,3 +21,4 @@ run_script.sh:
   license: "CC0-1.0"
   copyright: "2019 Cache Project"
   language: "en-US"
+  transform: "markdown"
