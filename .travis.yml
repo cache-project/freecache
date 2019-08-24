@@ -5,10 +5,6 @@ cache:
   - cache
 python:
 - '3.7'
-addons:
-  apt:
-    packages:
-    - pandoc
 install:
 - pip install -r meta/builder/requirements.txt
 script:
