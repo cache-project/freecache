@@ -26,6 +26,8 @@ def validate(licenses, directory):
     file_meta = meta[file]
     if 'license' not in file_meta:
       raise Exception('{} missing a license'.format(file_path))
+    if file_meta['license'] not in licenses:
+      raise Exception('{} has invalid license ({})'.format(file_path, file_meta['license']))
   children = os.listdir(directory)
   for child in children:
     if child != 'meta.yml' and child not in meta and child not in ignore:
