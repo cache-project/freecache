@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-import toml
+import yaml
 
 ignore = [
   '.DS_Store',
@@ -16,8 +16,9 @@ def get_licenses(root_dir):
 
 
 def validate(licenses, directory):
-  meta_file_path = os.path.join(directory, 'meta.toml')
-  meta = toml.load(meta_file_path)
+  meta_file_path = os.path.join(directory, 'meta.yml')
+  with open(meta_file_path, 'r') as meta_file:
+    meta = yaml.load(meta_file.read(), Loader=yaml.Loader)
   for file in meta:
     file_path = os.path.join(directory, file)
     if not os.path.exists(file_path):
@@ -27,7 +28,7 @@ def validate(licenses, directory):
       raise Exception('{} missing a license'.format(file_path))
   children = os.listdir(directory)
   for child in children:
-    if child != 'meta.toml' and child not in meta and child not in ignore:
+    if child != 'meta.yml' and child not in meta and child not in ignore:
       validate(licenses, os.path.join(directory, child))
 
 if __name__ == "__main__":

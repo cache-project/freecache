@@ -1,0 +1,7 @@
+licenses:
+  license: "CC0-1.0"
+
+.travis.yml:
+  publisher: "Cache Project"
+  license: "CC0-1.0"
+  copyright: "2019 Cache Project"
