@@ -1,7 +1,7 @@
 import os
 import mistletoe
 
-header = '<link rel="stylesheet" href="/freecache/runtime/style.css" />'
+header = '<link rel="stylesheet" href="/runtime/style.css" />'
 
 
 def transform(meta_dict, input_file, output_file, args):

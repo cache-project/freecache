@@ -59,7 +59,7 @@ def build(directory, out_directory, args):
   children = [child for child in os.listdir(directory) if child != 'meta.yml' and child not in meta_dict and child not in ignore]
   if 'index.html' not in os.listdir(out_directory):
     with open(os.path.join(out_directory, 'index.html'), 'w') as index:
-      index.write('<link rel="stylesheet" href="/freecache/runtime/style.css" /><ul>')
+      index.write('<link rel="stylesheet" href="/runtime/style.css" /><ul>')
       for child in children:
         index.write('<li><a href="{}"><strong><code>{}/</code></strong></a></li>'.format(child, child))
       for file in meta_dict:
