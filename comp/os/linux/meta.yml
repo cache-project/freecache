@@ -1,11 +1,3 @@
-linux-5.2.9:
-  publisher: "The Linux Kernel Organization"
-  license: "GPL-2.0-only"
-  build: "download-archive"
-  url: "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.9.tar.xz"
-  hash: "c6896219fbd1a13dd5106e6310d25f6b00b811206238e021eb4ea61cd38dcafe"
-  title: "Linux Kernel, version 5.2.9"
-
 linux-5.2.9.tar.xz:
   publisher: "The Linux Kernel Organization"
   license: "GPL-2.0-only"
